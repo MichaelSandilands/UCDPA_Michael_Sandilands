@@ -119,6 +119,10 @@ Steps:
   - Visualize boxplots of Milliseconds vs Quantile partitioned by Milliseconds cluster.
   - Use this plot to generate insights about Milliseconds clusters across quantiles.
 
+### No Train/Test Split - No Cross-Validation
+
+For unsupervised learning we're dealing with unlabeled data. There is no target variable and so there is no 'True' value in order to validate the results of our model. Instead we use metrics such as the `within cluster sum of squares`.
+
 ## Results & Insights
 
 I use UMAP Projections to generate insights for all the columns of interest. 
@@ -191,7 +195,11 @@ This plot shows how our Milliseconds features have been clustered.
 # References
 
 Chinook Database: https://github.com/lerocha/chinook-database
+
 sqlalchemy: https://www.sqlalchemy.org
+
 plotnine: https://plotnine.readthedocs.io/en/stable/
+
 Clustering Concepts: https://developers.google.com/machine-learning/clustering
+
 UMAP: https://umap-learn.readthedocs.io/en/latest/
