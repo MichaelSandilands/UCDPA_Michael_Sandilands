@@ -9,6 +9,9 @@
 %cd ..
 ```
 
+    /home/michael/Documents/python_projects/UCDPA_Michael_Sandilands
+
+
 
 ```python
 import pandas as pd
@@ -62,6 +65,19 @@ For unsupervised learning there is no response or target variable. Therefore, th
 kmeans_inertia_plot(genre_features, 15, 'Genre Name Inertia Plot')
 ```
 
+
+    
+![png](clustering_and_insights_files/clustering_and_insights_6_0.png)
+    
+
+
+
+
+
+    <ggplot: (8751827842253)>
+
+
+
 The additional information gained past cluster 5 begins to flatten. Five clusters seem to be the optimum for 'GenreName'.
 
 #### Artist Name Inertia Plot
@@ -71,6 +87,19 @@ The additional information gained past cluster 5 begins to flatten. Five cluster
 kmeans_inertia_plot(artist_features, 15, 'Artist Name Inertia Plot')
 ```
 
+
+    
+![png](clustering_and_insights_files/clustering_and_insights_8_0.png)
+    
+
+
+
+
+
+    <ggplot: (8751845962625)>
+
+
+
 The additional information gained past cluster 5 begins to flatten. Four clusters seem to be the optimum for 'ArtistName'.
 
 #### Milliseconds Inertia Plot
@@ -79,6 +108,19 @@ The additional information gained past cluster 5 begins to flatten. Four cluster
 ```python
 kmeans_inertia_plot(milliseconds_features, 15, 'Milliseconds Inertia Plot')
 ```
+
+
+    
+![png](clustering_and_insights_files/clustering_and_insights_10_0.png)
+    
+
+
+
+
+
+    <ggplot: (8751825455325)>
+
+
 
 The additional information gained past cluster 3 begins to flatten. Three clusters seem to be the optimum for 'Milliseconds'.
 
@@ -121,6 +163,23 @@ g.save(filename='customer_genre_umap.png', format='png', path='./00_Images')
 g
 ```
 
+    /home/michael/anaconda3/envs/venv1/lib/python3.7/site-packages/plotnine/ggplot.py:721: PlotnineWarning: Saving 10 x 8 in image.
+    /home/michael/anaconda3/envs/venv1/lib/python3.7/site-packages/plotnine/ggplot.py:722: PlotnineWarning: Filename: ./00_Images/customer_genre_umap.png
+
+
+
+    
+![png](clustering_and_insights_files/clustering_and_insights_12_1.png)
+    
+
+
+
+
+
+    <ggplot: (8751825401337)>
+
+
+
 Besides showing us how the k-means algorithm segmented our data, this umap projection graph really lets us see which customers are most similar to each other. Take for example the 5 orange clusters on the left hand side of the plot, customer id 16, 55, 36, 35 and 27. These customers are well separated from any other points and are tightly clustered together. This suggests that these customers have very similar taste in genres.
 
 ### Artist Name
@@ -160,6 +219,23 @@ g.save(filename='customer_artist_umap.png', format='png', path='./00_Images')
 
 g
 ```
+
+    /home/michael/anaconda3/envs/venv1/lib/python3.7/site-packages/plotnine/ggplot.py:721: PlotnineWarning: Saving 10 x 8 in image.
+    /home/michael/anaconda3/envs/venv1/lib/python3.7/site-packages/plotnine/ggplot.py:722: PlotnineWarning: Filename: ./00_Images/customer_artist_umap.png
+
+
+
+    
+![png](clustering_and_insights_files/clustering_and_insights_15_1.png)
+    
+
+
+
+
+
+    <ggplot: (8751826121453)>
+
+
 
 The UMAP projections and K-Means clusters for the artist name variable. Unfortunately we have some overlap between clusters. This is likely due to there being more dimensions than we are able to display.
 
@@ -202,6 +278,23 @@ g.save(filename='customer_milliseconds_umap.png', format='png', path='./00_Image
 g
 
 ```
+
+    /home/michael/anaconda3/envs/venv1/lib/python3.7/site-packages/plotnine/ggplot.py:721: PlotnineWarning: Saving 10 x 8 in image.
+    /home/michael/anaconda3/envs/venv1/lib/python3.7/site-packages/plotnine/ggplot.py:722: PlotnineWarning: Filename: ./00_Images/customer_milliseconds_umap.png
+
+
+
+    
+![png](clustering_and_insights_files/clustering_and_insights_18_1.png)
+    
+
+
+
+
+
+    <ggplot: (8751755161177)>
+
+
 
 The UMAP projections and K-Means clusters for the Milliseconds variable.
 
@@ -256,6 +349,23 @@ g.save(filename='genre_insights.png', format='png', path='./00_Images')
 g
 ```
 
+    /home/michael/anaconda3/envs/venv1/lib/python3.7/site-packages/plotnine/ggplot.py:721: PlotnineWarning: Saving 10 x 8 in image.
+    /home/michael/anaconda3/envs/venv1/lib/python3.7/site-packages/plotnine/ggplot.py:722: PlotnineWarning: Filename: ./00_Images/genre_insights.png
+
+
+
+    
+![png](clustering_and_insights_files/clustering_and_insights_22_1.png)
+    
+
+
+
+
+
+    <ggplot: (8751797039073)>
+
+
+
 This plot shows the top 10 genres for each cluster. This plot will help us to know which genres to market to each customer. 
 
 For example: 
@@ -274,9 +384,35 @@ customer_column_count_visualization(genre_clusters_df, 'GenreName', 'Rock')
 ```
 
 
+    
+![png](clustering_and_insights_files/clustering_and_insights_24_0.png)
+    
+
+
+
+
+
+    <ggplot: (8751825432021)>
+
+
+
+
 ```python
 customer_column_count_visualization(genre_clusters_df, 'GenreName', 'Latin')
 ```
+
+
+    
+![png](clustering_and_insights_files/clustering_and_insights_25_0.png)
+    
+
+
+
+
+
+    <ggplot: (8751825481389)>
+
+
 
 
 ```python
@@ -284,9 +420,35 @@ customer_column_count_visualization(genre_clusters_df, 'GenreName', 'Metal')
 ```
 
 
+    
+![png](clustering_and_insights_files/clustering_and_insights_26_0.png)
+    
+
+
+
+
+
+    <ggplot: (8751741093453)>
+
+
+
+
 ```python
 customer_column_count_visualization(genre_clusters_df, 'GenreName', 'Alternative & Punk')
 ```
+
+
+    
+![png](clustering_and_insights_files/clustering_and_insights_27_0.png)
+    
+
+
+
+
+
+    <ggplot: (8751825465845)>
+
+
 
 These plots make it easy to understand why "Rock", "Latin", "Metal" and "Alternative & Punk" show up in every cluster. These Genres are ubiquitous or near ubiquitous across customers.
 
@@ -338,6 +500,23 @@ g.save(filename='artist_insights.png', format='png', path='./00_Images')
 
 g
 ```
+
+    /home/michael/anaconda3/envs/venv1/lib/python3.7/site-packages/plotnine/ggplot.py:721: PlotnineWarning: Saving 14 x 10 in image.
+    /home/michael/anaconda3/envs/venv1/lib/python3.7/site-packages/plotnine/ggplot.py:722: PlotnineWarning: Filename: ./00_Images/artist_insights.png
+
+
+
+    
+![png](clustering_and_insights_files/clustering_and_insights_31_1.png)
+    
+
+
+
+
+
+    <ggplot: (8751825482377)>
+
+
 
 Here we have the top 30 Artists for each cluster. 
 
@@ -392,6 +571,23 @@ g.save(filename='milliseconds_insights.png', format='png', path='./00_Images')
 
 g
 ```
+
+    /home/michael/anaconda3/envs/venv1/lib/python3.7/site-packages/plotnine/ggplot.py:721: PlotnineWarning: Saving 10 x 8 in image.
+    /home/michael/anaconda3/envs/venv1/lib/python3.7/site-packages/plotnine/ggplot.py:722: PlotnineWarning: Filename: ./00_Images/milliseconds_insights.png
+
+
+
+    
+![png](clustering_and_insights_files/clustering_and_insights_34_1.png)
+    
+
+
+
+
+
+    <ggplot: (8751739440457)>
+
+
 
 This plot shows how our Milliseconds features have been clustered. 
 
